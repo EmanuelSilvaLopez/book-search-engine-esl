@@ -4,8 +4,15 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
+// Needed apollo provider to make requests work with server
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+
+
+
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
       <>
         <Navbar />
@@ -16,6 +23,7 @@ function App() {
         </Switch>
       </>
     </Router>
+    </ApolloProvider>
   );
 }
 
